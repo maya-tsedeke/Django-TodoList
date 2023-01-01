@@ -1,0 +1,92 @@
+{
+    "password1":"1819@uef123",
+    "password2":"1819@uef123",
+    "old_password":"1819@Parul",
+    "key":"xt2uywov9qh4ska"
+}
+
+		todos = Todo.objects.update(
+                title=request.data["title"],
+                user=user,
+                is_active=request.data['is_active'],
+                is_paused=request.data['is_paused'],
+                is_visible=request.data['is_visible'],
+                date=request.data['date'],
+                time=request.data['time']
+            )
+		todos.save()
+
+        		"""	user = request.user
+			empty_fields = {}
+			message = "field value not provided"
+			keys = ['title', 'is_active', 'is_paused', 'is_visible', 'date', 'time']
+			for key in keys:
+				if key not in request.data:
+					empty_fields[key] = message
+			if len(empty_fields) != 0:
+					return Response(status=status.HTTP_400_BAD_REQUEST, data=empty_fields)
+			todo = Todo.objects.get(key=key)
+			if 'title' in request.data:
+				todo.title = request.data['title']
+			elif 'is_active' in request.data:
+				todo.is_active = request.data['is_active']
+			elif 'is_paused' in request.data:
+				todo.is_paused = request.data['is_paused']
+			elif 'is_visible' in request.data:
+				todo.is_visible = request.data['is_visible']
+			elif 'date' in request.data:
+				todo.date = request.data['date']
+			elif 'time' in request.data:
+				todo.time = request.data['time']
+			else:
+				return Response(
+					data={"detail": "all fields was empty"},
+					status=status.HTTP_400_BAD_REQUEST
+				)
+
+			todo = Todo.objects.update(
+					title=request.data["title"],
+					user=user,
+					is_active=request.data['is_active'],
+					is_paused=request.data['is_paused'],
+					is_visible=request.data['is_visible'],
+					date=request.data['date'],
+					time=request.data['time']
+				)
+			todo.save()"""
+
+
+
+				""""	
+		permission_classes = (permissions.AllowAny, )
+		def get(self, request, key):  
+			result = Todo.objects.get(key=key)  
+			if key:  
+				serializers = TodoViewSerializer(result)  
+				return Response({'success': 'success', "students ":serializers.data}, status=200)  
+
+			result = Todo.objects.all()  
+			serializers = TodoViewSerializer(result, many=True)  
+			return Response({'status': 'success', "students":serializers.data}, status=200)  
+
+		def post(self, request):  
+			serializer = TodoViewSerializer(data=request.data)  
+			if serializer.is_valid():  
+				serializer.save()  
+				return Response({"status": "success", "data": serializer.data}, status=status.HTTP_200_OK)  
+			else:  
+				return Response({"status": "error", "data": serializer.errors}, status=status.HTTP_400_BAD_REQUEST)  
+
+		def patch(self, request, key):  
+			result = Todo.objects.get(key=key)  
+			serializer = TodoViewSerializer(result, data = request.data, partial=True)  
+			if serializer.is_valid():  
+				serializer.save()  
+				return Response({"status": "success", "data": serializer.data})  
+			else:  
+				return Response({"status": "error", "data": serializer.errors})  
+
+		def delete(self, request, key=None):  
+			result = get_object_or_404(Todo, key=key)  
+			result.delete()  
+			return Response({"status": "success", "data": "Record Deleted"}) """"
