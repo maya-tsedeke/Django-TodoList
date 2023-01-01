@@ -51,7 +51,10 @@ g/" target="_blank">here</a>
 <br>**Access Level** : Authorized users
 <br>*DELETE :* there is no data to send. you should put the Id of records that are in user you want to delete in the url instead of *{key}*
 
-
+# Custom User account using Django
+# To use GUI admin page login by your user name by using the following endpoint
+### http:localhost:8000/admin
+## To use Django Rest Framwork api for custom user account api use the following paths
 ## api/v1/
 ### api/v1/signin/
 **allowed methods** : POST
