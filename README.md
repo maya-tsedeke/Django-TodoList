@@ -52,14 +52,14 @@ g/" target="_blank">here</a>
 <br>*DELETE :* there is no data to send. you should put the Id of records that are in user you want to delete in the url instead of *{key}*
 
 
-## auth/v1/
-### auth/v1/signin/
+## api/v1/
+### api/v1/signin/
 **allowed methods** : POST
 <br>**Access Level** : Public
 <br>**fields :** 'required': {'username', 'password'}
 <br>*POST :* the data you post should include 'username' and 'password' fields if the user was authorized the access token and the refresh token will return as json.[more information about JWT](https://django-rest-framework-simplejwt.readthedocs.io/en/latest/getting_started.html#usage)
 
-#### auth/v1/signin/refresh/
+#### api/v1/signin/refresh/
 **allowed methods** : POST
 <br>**Access Level** : Public
 <br>**fields :** 'required': {'refresh'}
@@ -71,7 +71,7 @@ g/" target="_blank">here</a>
 <br>**fields :** 'required': {'username', 'password1', 'password2', 'email', 'first_name', 'last_name'}
 <br>*POST :* should include the 'fields' keys and proper value. errors and exceptions handled , should have a proper place to show them in frontend.
 
-### auth/v1/changepassword/{id}/
+### api/v1/changepassword/{id}/
 **allowed methods** : PUT
 <br>**Access Level** : Authorized users
 <br>**fields :** 'required': {'old_password', 'password1', 'password2'}
